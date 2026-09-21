@@ -4,14 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-opencv = { version = "0.96.0" }
-# opencv = "0.66"
+opencv = { version = "0.93", default-features = false, features = ["imgproc", "imgcodecs", "highgui", "videoio","dnn"] }
 tokio = { version = "1", features = ["full"] }
-rayon = "1.7"
-log = "0.4"
-env_logger = "0.10"
+ort = { version = "2.0.0-rc.10", features = ["ndarray"] }
+ndarray = "0.16"
+bytes = "1"
 warp = "0.3"
 async-stream = "0.3"
-bytes = "1"
-ort = { version = "2.0.0-rc.10" }
-ndarray = "0.15"
+log = "0.4"
+env_logger = "0.11"
+anyhow = "1"
